@@ -1,4 +1,5 @@
 1.	Identify prescription opioids from the drugs dataset. Refer to the truncated list of ATC codes for opioids here: N02AA01, N02AA03, N02AA05. Within the same statement, create a subsetted data that only contains the above prescription opioids. Finally, take only the first 100,000 IDs (10% sample from the population) to speed up the program execution process.
+
 libname mod3 "/home/u57826685/myfolders";
 proc contents data = mod3.drug_subset_150k;
 
@@ -26,6 +27,7 @@ format stopdate yymmdds9.;
 
 
 3.	Repeat steps 1-2 for benzodiazepines. Refer to the truncated list of ATC codes for benzodiazepines here: N05BA01, N05BA02, N05BA04, N05BA05, N05BA06, N05BA08, N05BA09, N05BA10, N05BA12. Similarly, take only the first 100,000 IDs (10% sample from the population).
+
 libname mod3 "/home/u57826685/myfolders";
 proc contents data = mod3.drug_subset_150k;
 
@@ -39,6 +41,7 @@ proc print data = ben;
 by age;
 
 4.	In the ‘sd_table_demo’ dataset, keep only the patients whose age was 18 or above at the start of follow-up.
+
 proc contents data = mod3.sd_table_demo;
 data agefiltered;
 set mod3.sd_table_demo;
